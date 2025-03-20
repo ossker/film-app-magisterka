@@ -25,6 +25,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "StaticSites",
+    pattern: "Info/{viewName}",
+    defaults: new { controller = "Home", action="footerSites"}
+    );
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
