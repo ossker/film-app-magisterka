@@ -1,4 +1,5 @@
-﻿using film_app_magisterka.Models;
+﻿using film_app_magisterka.DAL;
+using film_app_magisterka.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,21 +7,28 @@ namespace film_app_magisterka.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        FilmsContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(FilmsContext db)
         {
-            _logger = logger;
+            this.db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var kategorie = db.Categories.ToList();
+            return View(kategorie);
         }
 
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult footerSites(string viewName)
+        {
+            var kategorie = db.Categories.ToList();
+            return View(viewName, kategorie);
         }
     }
 }

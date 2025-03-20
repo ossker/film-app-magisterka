@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Category>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Bootstrap Example</title>
@@ -10,7 +12,7 @@
 	<link href="~/css/layout.css" rel="stylesheet" />
 </head>
 <body>
-
+    
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -23,10 +25,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    @foreach (var category in Model)
+                    {
+                        <li><a href="#">@category.Name</a></li>
+                    }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -57,7 +59,10 @@
     </div>
 
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+        <a href="@Url.Action("footerSites", "Home", new {viewName="Omnie"})">O mnie</a>
+        <a href="@Url.Action("footerSites", "Home", new {viewName="Regulamin"})">Regulamin</a>
+        <a href="@Url.Action("footerSites", "Home", new {viewName="Kontakt"})">Kontakt</a>
+        <a href="@Url.Action("footerSites", "Home", new {viewName="Platnosci"})">Płatności</a>
     </footer>
 
 </body>
