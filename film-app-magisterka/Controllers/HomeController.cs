@@ -16,8 +16,7 @@ namespace film_app_magisterka.Controllers
 
         public IActionResult Index()
         {
-            var kategorie = db.Categories.ToList();
-            return View(kategorie);
+            return View();
         }
 
         public IActionResult Privacy()
@@ -27,8 +26,7 @@ namespace film_app_magisterka.Controllers
 
         public IActionResult footerSites(string viewName)
         {
-            var kategorie = db.Categories.ToList();
-            return View(viewName, kategorie);
+            return View(viewName);
         }
     }
 }
