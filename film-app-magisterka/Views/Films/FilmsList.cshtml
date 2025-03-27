@@ -11,6 +11,7 @@
 			<th>Reżyser</th>
 			<th>Opis</th>
 			<th>Cena</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +22,7 @@
 				<td>@film.Director</td>
 				<td>@film.Description</td>
 				<td>@film.Price zł</td>
+				<td><a href="@Url.Action("Details", "Films", new { filmId = film.FilmId})">Więcej</a></td>
 			</tr>
 		}
 	</tbody>

@@ -19,5 +19,15 @@ namespace film_app_magisterka.Controllers
             var films = category.Films.ToList();
             return View(films);
         }
+
+        public IActionResult Details(int filmId)
+        {
+            var film = db.Films.Find(filmId);
+            if (film !=null)
+            {
+                db.Categories.Find(film.CategoryId);
+            }
+            return View(film);
+        }
     }
 }
