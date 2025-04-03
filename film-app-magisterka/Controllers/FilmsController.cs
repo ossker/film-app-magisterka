@@ -29,5 +29,11 @@ namespace film_app_magisterka.Controllers
             }
             return View(film);
         }
+
+        public IActionResult FilmsPosters()
+        {
+            var films = db.Films.ToList();
+            return View(films);
+        }
     }
 }
