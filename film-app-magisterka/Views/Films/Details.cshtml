@@ -1,12 +1,14 @@
 ﻿@model Film
 @(await Component.InvokeAsync("SideMenu", new {categoryName  = Model.Category.Name}))
+
+<h2>@Model.Category.Name</h2>
+
 <table>
 	<tr>
-		<td>
-			<h2>@Model.Category.Name</h2>
-		</td>
+		<td><img src="~/posters/@Model.Poster" alt="Plakat filmu" style="max-width: 200px; height: auto;"></td>
 		<td>
 			<ul>
+				
 				<li><b>Tytuł: </b>@Model.Title</li>
 				<li><b>Reżyser: </b>@Model.Director</li>
 				<li><b>Cena: </b>@Model.Price zł</li>

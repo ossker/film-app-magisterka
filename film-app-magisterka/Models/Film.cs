@@ -12,6 +12,7 @@ namespace film_app_magisterka.Models
 
         [StringLength(600, ErrorMessage = "Przekroczono limit znaków")]
         public string Description { get; set; }
+        public string Poster { get; set; }
         public decimal? Price { get; set; }
 
         public int CategoryId { get; set; }

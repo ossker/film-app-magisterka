@@ -25,6 +25,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "FilmsPosters",
+    pattern: "/wszystkie",
+    defaults: new { controller = "Films", action = "FilmsPosters" }
+    );
+
+app.MapControllerRoute(
     name: "Details",
     pattern: "{action}/{filmId}",
     defaults: new { controller = "Films", action = "Details" }
