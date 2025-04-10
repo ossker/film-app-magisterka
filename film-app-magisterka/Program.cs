@@ -25,6 +25,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "AddFilm",
+    pattern: "/dodaj",
+    defaults: new { controller = "Films", action = "AddFilm" }
+    );
+
+app.MapControllerRoute(
     name: "FilmsPosters",
     pattern: "/wszystkie",
     defaults: new { controller = "Films", action = "FilmsPosters" }
