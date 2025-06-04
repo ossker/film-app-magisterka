@@ -9,7 +9,7 @@ namespace film_app_magisterka.DAL
 
         public DbSet<Category> Categories { get; set; }
 
-        public FilmsContext(DbContextOptions options) : base(options)
+        public FilmsContext(DbContextOptions<FilmsContext> options) : base(options)
         {
         }
 

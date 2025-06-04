@@ -1,0 +1,28 @@
+﻿@model LoginViewModel
+
+<div>
+    @ViewBag.msg
+</div>
+
+<div>
+    @Html.ValidationSummary()
+</div>
+
+@using(Html.BeginForm("Login", "Account", FormMethod.Post)){
+<div>
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.UserName, "Podaj nazwę użytkownika:")</b>
+        @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.UserName)</p>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.Password, "Podaj hasło:")</b>
+        @Html.PasswordFor(m => m.Password, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.Password)</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zaloguj</button>
+</div>
+
+}
