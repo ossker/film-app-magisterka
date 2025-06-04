@@ -54,6 +54,43 @@ app.MapControllerRoute(
     defaults: new { controller = "Films", action = "Details" }
     );
 
+app.MapControllerRoute(
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
+    name: "Categories",
+    pattern: "{categoryName}",
+    defaults: new { controller = "Films", action="FilmsList"}
+    );
 
 
 app.MapControllerRoute(
