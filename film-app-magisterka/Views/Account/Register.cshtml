@@ -1,0 +1,50 @@
+﻿@model RegisterViewModel
+
+<div>
+    @ViewBag.msg
+</div>
+
+<div>
+    @Html.ValidationSummary()
+</div>
+
+@using(Html.BeginForm("Register", "Account", FormMethod.Post)){
+<div>
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.FirstName, "Podaj imię:")</b>
+        @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.LastName, "Podaj nazwisko:")</b>
+        @Html.TextBoxFor(m => m.LastName, new {@class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.Email, "Podaj email:")</b>
+        @Html.TextBoxFor(m => m.Email, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.Email)</p>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.UserName, "Podaj nazwę użytkownika:")</b>
+        @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.UserName)</p>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.Password, "Podaj hasło:")</b>
+        @Html.PasswordFor(m => m.Password, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.Password)</p>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(m => m.ConfirmPassword, "Powtórz hasło:")</b>
+        @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control", @required=true})
+        <p>@Html.ValidationMessageFor(m => m.ConfirmPassword)</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zarejestruj</button>
+</div>
+
+}

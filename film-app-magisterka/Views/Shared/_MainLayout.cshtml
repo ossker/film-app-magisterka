@@ -38,7 +38,12 @@
         <a href="@Url.Action("AddFilm", "Films")" class="btn-primary btn">Dodaj Film</a>
     </footer>
 
-    @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", false)
+
+    <script src="~/lib\jquery\dist\jquery.min.js"></script>
+    <script src="~/lib\jquery-validation\dist\jquery.validate.js"></script>
+    <script src="~/lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js"></script>
+    <script src=""></script>
 
 </body>
 </html>
